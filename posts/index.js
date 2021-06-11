@@ -10,7 +10,7 @@ app.use(cors())
 
 const posts = {}
 
-app.get('/posts', (req, res) => {
+app.get('/posts', (_, res) => {
   res.send(posts)
 })
 
@@ -31,9 +31,7 @@ app.post('/posts', async (req, res) => {
   res.status(201).send(posts[id])
 })
 
-app.post('/events', (req, res) => {
-  console.log('Recieved Event', req.body.type)
-
+app.post('/events', (_, res) => {
   res.send({})
 })
 

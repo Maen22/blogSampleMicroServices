@@ -1,5 +1,4 @@
 const express = require('express')
-const { randomBytes } = require('crypto')
 const cors = require('cors')
 
 const app = express()
@@ -14,14 +13,15 @@ app.use(cors())
         comments: [
             {
                 id: 'klj3kl',
-                content: 'comment content'
+                content: 'comment content',
+                status: 'pending' | 'approved' | 'rejected'
             }
         ]
     }
 }*/
 const posts = {}
 
-app.get('/posts', (req, res) => {
+app.get('/posts', (_, res) => {
   res.send(posts)
 })
 
